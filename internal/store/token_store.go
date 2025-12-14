@@ -25,7 +25,7 @@ func NewMemoryTokenStore() *MemoryTokenStore {
 	return &MemoryTokenStore{m: make(map[string]Token)}
 }
 
-func (s *MemoryTokenStore) Put(sessionID string, t token) {
+func (s *MemoryTokenStore) Put(sessionID string, t Token) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.m[sessionID] = t
